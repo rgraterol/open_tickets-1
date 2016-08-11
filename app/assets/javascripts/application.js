@@ -21,4 +21,10 @@
 //= require chosen-jquery
 //= require highcharts
 //= require chartkick
+//= require angular
+//= require angular-resource
+//= require angular-animate
+//= require angular-ui-bootstrap
+//= require angular-ui-bootstrap-tpls
+//= require_tree ./ticket
 //= require_tree .

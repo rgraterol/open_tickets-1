@@ -24,6 +24,13 @@ Rails.application.routes.draw do
 
   resources :dashboards, only: [:index, :show]
 
+  post 'tickets/order_by', to: 'tickets#order_by'
+
+  scope 'api/v1' do
+    resources :tickets
+    resources :companies
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

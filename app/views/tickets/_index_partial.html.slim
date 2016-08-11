@@ -1,0 +1,12 @@
+- @tickets.each do |ticket|
+  tr
+    td = ticket.company_name
+    td = ticket.notified_by.email
+    td = ticket.created_by.email
+    td = ticket.aasm_state
+    td = ticket.title
+    td = ticket.description
+    td = ticket.closed_at
+    td = link_to 'Show', ticket
+    td = link_to 'Edit', edit_ticket_path(ticket)
+    td = link_to 'Destroy', ticket, data: {:confirm => 'Are you sure?'}, :method => :delete

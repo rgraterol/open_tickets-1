@@ -108,13 +108,13 @@ class Ticket < ActiveRecord::Base
   end
 
   def create_pull_request
-    git = company.get_git
+    # git = company.get_git
     # TODO: Use develop branch instead of master as base
-    # creates branch
-    branch = git.branch(branch_name)
-    branch.create 
-    # push branch to origin
-    git.push('origin', branch_name)
+    # # creates branch
+    # branch = git.branch(branch_name)
+    # branch.create 
+    # # push branch to origin
+    # git.push('origin', branch_name)
     return true
   end
 end

@@ -75,6 +75,14 @@ class TicketsController < ApplicationController
     render :show
   end
 
+  def order_by
+    case params[:criteria]
+    when 'companies'
+      @tickets = Ticket.joins(:company).order("companies.name #{params[:order].upcase}")
+    end  
+    render partial: 'index_partial'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ticket
@@ -102,4 +110,5 @@ class TicketsController < ApplicationController
     def ticket_params_for_change
       params.require(:ticket).permit(:new_state, :issue_type_id).merge(action_user: current_user)
     end
+
 end
